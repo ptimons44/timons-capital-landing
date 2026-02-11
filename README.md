@@ -18,4 +18,24 @@ Then visit http://localhost:8000
 
 ## Deployment
 
-This is a static site that can be deployed to any static hosting service (GitHub Pages, Netlify, Vercel, etc.).
+### Cloudflare Pages
+
+This site is configured for Cloudflare Pages deployment:
+
+```bash
+npx wrangler pages deploy .
+```
+
+Or with a specific project name:
+```bash
+npx wrangler pages deploy . --project-name=timons-capital-landing
+```
+
+Cloudflare settings:
+- Build command: `exit 0` (no build needed)
+- Deploy command: `npx wrangler pages deploy .`
+- Root directory: `/`
+
+### Other Platforms
+
+Can also be deployed to GitHub Pages, Netlify, Vercel, or any static hosting service.

@@ -23,10 +23,23 @@ python3 -m http.server 8000
 
 ## Deployment
 
-This static site can be deployed to:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting service
+This site is configured for Cloudflare Pages deployment using Wrangler.
 
-Simply deploy the root directory containing `index.html` and `styles.css`.
+### Cloudflare Pages Deployment
+
+Cloudflare settings:
+- Build command: `exit 0` (no build needed for static site)
+- Deploy command: `npx wrangler pages deploy .`
+- Root directory: `/`
+
+To deploy manually:
+```bash
+npx wrangler pages deploy .
+```
+
+Or deploy to a specific project:
+```bash
+npx wrangler pages deploy . --project-name=timons-capital-landing
+```
+
+The site can also be deployed to other static hosting services (GitHub Pages, Netlify, Vercel).
